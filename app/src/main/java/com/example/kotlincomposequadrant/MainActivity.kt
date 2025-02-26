@@ -58,9 +58,23 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.weight(0.5f)
                 )
             }
+            Row(Modifier.weight(1f)) {
+                CardInfo(
+                    header = "Row composable",
+                    text = "A layout composable that places its children in a horizontal sequence.",
+                    backgroundColor = Color(0xFFB69DF8),
+                    modifier = Modifier.weight(0.5f)
+                )
+                CardInfo(
+                    header = "Column composable",
+                    text = "A layout composable that places its children in a vertical sequence.",
+                    backgroundColor = Color(0xFFF6EDFF),
+                    modifier = Modifier.weight(0.5f)
+                )
+            }
         }
+
     }
-}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {

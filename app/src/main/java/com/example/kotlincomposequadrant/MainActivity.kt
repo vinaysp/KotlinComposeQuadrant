@@ -76,13 +76,31 @@ class MainActivity : ComponentActivity() {
 
     }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    @Composable
+    fun CardInfo(
+        header: String,
+        text: String,
+        backgroundColor: Color,
+        modifier: Modifier = Modifier
+    ) {
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .background(backgroundColor).padding(16.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = header,
+                modifier = Modifier.padding(bottom = 16.dp),
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                text = text,
+                textAlign = TextAlign.Justify,
+            )
+        }
+    }
 
 @Preview(showBackground = true)
 @Composable

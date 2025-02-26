@@ -102,10 +102,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KotlinComposeQuadrantTheme {
-        Greeting("Android")
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        KotlinComposeQuadrantTheme {
+            QuadrantScreen()
+        }
     }
 }

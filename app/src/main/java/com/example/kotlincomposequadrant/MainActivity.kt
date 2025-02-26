@@ -31,12 +31,32 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             KotlinComposeQuadrantTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    QuadrantScreen()
                 }
+            }
+        }
+    }
+
+    @Composable
+    fun QuadrantScreen() {
+        Column(Modifier.fillMaxWidth()) {
+            Row(Modifier.weight(1f)) {
+                CardInfo(
+                    header = "Text Composable",
+                    text = "Displays text and follows the recommended Material Design guidelines.",
+                    backgroundColor = Color(0xFFEADDFF),
+                    modifier = Modifier.weight(0.5f)
+                )
+                CardInfo(
+                    header = "Image composable",
+                    text = "Creates a composable that lays out and draws a given Painter class object.",
+                    backgroundColor = Color(0xFFD0BCFF),
+                    modifier = Modifier.weight(0.5f)
+                )
             }
         }
     }
